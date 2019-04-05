@@ -14,5 +14,8 @@ in the application directory and make necessary changes in the docker-compose.ya
 <b>  1.Adding certificate to the blockchain network</b></br>
 <b>  2.Request verification </br> </b>
 *** 
-3. Run the client.py file which requires python3 installed as shown below inside the container education-client :</br>
+3. Run the client.py file which requires python3 installed as shown below inside the container education-client to add certificates of students onto the network :</br>
 \>> **python3 client.py add [usn] [name] [marks]**
+***
+4. Run the client2.py file which requires python3 installed as shown below inside the container education-client to verify the certificate:</br>
+\>> **python3 client2.py req [usn] [name] [marks]**
