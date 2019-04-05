@@ -40,7 +40,9 @@ class EducationTransactionHandler(TransactionHandler):
 
         if action=="add":
               self._adddata_(context, addrs,payload_list)
-        
+
+        elif action=="req":
+              self._request_(context,addrs,payload_list)  
         else:
             print("unhandled")
          #   LOGGER.info("Unhandled action.")
@@ -61,6 +63,17 @@ class EducationTransactionHandler(TransactionHandler):
              print("added successfully")
         else:
             raise InvalidTransaction(" exists")
+
+ '''   @classmethod
+    def _request_(cls,context,addrs,payload_list,timeout=5):
+        state_entries=context.get_state([addrs])
+        checkdata=(payload_list[1]+payload_list[2]).encode("utf-8")
+        if state_entries==checkdata:
+            print("Certificate is valid")
+        else:
+            print("Not valid")
+                  
+    '''        
 
 def main():
     
